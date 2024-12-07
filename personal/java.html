@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Password Validation</title>
+<script>
+function validatePassword() {
+    var password = document.getElementById("password").value;
+    if (password.length < 8) {
+        alert("Password must be at least 8 characters long");
+        return false;
+    }
+    return true;
+}
+</script>
+</head>
+<body>
+
+<form onsubmit="return validatePassword()">
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password">
+    <input type="submit" value="Submit">
+</form>
+
+<script>
+document.querySelector('form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  validatePassword();
+});
+</script>
+
+</body>
+</html>
